@@ -1,4 +1,4 @@
-module github.com/JonecoBoy/cotationServer
+module github.com/JonecoBoy/cotationServer/server
 
 go 1.21
 

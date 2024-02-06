@@ -3,8 +3,8 @@ package main
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/JonecoBoy/cotationServer/cotation"
-	"github.com/JonecoBoy/cotationServer/db"
+	"github.com/JonecoBoy/cotationServer/server/cotation"
+	"github.com/JonecoBoy/cotationServer/server/db"
 	_ "github.com/mattn/go-sqlite3"
 	"log"
 	"net/http"
@@ -48,7 +48,7 @@ func getExchange(w http.ResponseWriter, r *http.Request) {
 
 	err = db.InsertCotation(&c)
 	if err != nil {
-		log.Fatal(err)
+		panic(err)
 	}
 
 	if mode != "detailed" {

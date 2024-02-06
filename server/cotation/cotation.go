@@ -54,6 +54,12 @@ func GetCotation(from string, to string) (Cotation, error) {
 	if err != nil {
 		return Cotation{}, err
 	}
+
+	if ctx.Err() == context.DeadlineExceeded {
+		fmt.Println("Api fetch timeout exceeed.")
+		return Cotation{}, errors.New("Api fetch timeout exceeed.")
+	}
+
 	// depois de tudo termina e faz o body
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)

@@ -4,7 +4,7 @@ import (
 	"context"
 	"database/sql"
 	"fmt"
-	"github.com/JonecoBoy/cotationServer/cotation"
+	"github.com/JonecoBoy/cotationServer/server/cotation"
 	"os"
 	"os/exec"
 	"strings"
@@ -106,5 +106,6 @@ func InsertCotation(c *cotation.Cotation) error {
 	if err != nil {
 		return err
 	}
+
 	return nil
 }
