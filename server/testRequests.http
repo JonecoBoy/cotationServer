@@ -1,1 +1,7 @@
+GET localhost:8080/cotacao
+
+###
 GET localhost:8080/cotacao?from=usd&to=brl
+
+###
+GET localhost:8080/cotacao?from=hkd&to=brl
