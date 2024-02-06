@@ -34,7 +34,8 @@ const (
 
 func DatabaseBuilder() {
 	// Check if sqlite3 package is installed
-	checkSQLite3Installed()
+	// removido só estava funcionando no linux
+	//checkSQLite3Installed()
 
 	// Check if cotations.db file exists
 	if _, err := os.Stat(dbPath); os.IsNotExist(err) {
