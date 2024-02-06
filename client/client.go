@@ -48,6 +48,7 @@ func GetCotation(from string, to string) (string, error) {
 	// o contexto expira em 1 segundo!
 	ctx, cancel := context.WithTimeout(ctx, requestExpirationTime)
 	defer cancel() // de alguma forma nosso contexto será cancelado
+	// pode fazer apenas para a url /cotacao que ira retornar a cotacao default que é o valor do dolar em reais
 	url := fmt.Sprintf("http://localhost:8080/cotacao?from=%s&to=%s", from, to)
 
 	req, err := http.NewRequestWithContext(ctx, "GET", url, nil)
